@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7071f690e0.js" crossorigin="anonymous"></script>
+    <title>TicTacToe</title>
+</head>
+
+<body>
+    <main>
+        <div class="name-form">
+            <div class="first-form form appear">
+                <h1 class="form-header">Player 1</h1>
+                <div class="username">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="username1" id="username1" class="username-input" placeholder="Username"
+                        required>
+                    <label class="username-label" for="username1">Username</label>
+                </div>
+                <button id="username1btn" class="form-btn">OK</button>
+            </div>
+            <div class="second-form form">
+                <h1 class="form-header">Player 2</h1>
+                <div class="username">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="username2" id="username2" class="username-input" placeholder="Username"
+                        required>
+                    <label class="username-label" for="username2">Username</label>
+                </div>
+                <button id="username2btn" class="form-btn">OK</button>
+            </div>
+        </div>
+
+        <div class="final hidden">
+           <div class="result">
+                <h1 class="result-text">Congratulation</h1>
+                <h2>Please click 'Re-start/ Next' to play again</h2>
+                <button class="result-close form-btn">OK</button>
+           </div>
+        </div>
+
+        <div class="game">
+            <div class="first-score score">
+                <img src="./img/blueTeam.jpeg" alt="Blue Avatar" class="avatar">
+                <div class="score-detail">
+                    <h1 id="user1" class="name">&ThickSpace;</h1>
+                    <div class="score-display">
+                        <h2>Score</h2>
+                        <h2 id="playerscore1">&ThickSpace;</h3>
+                    </div>
+                    <h2 id="playerturn1" class="turn"></h2>
+                </div>
+            </div>
+
+            <div class="board-game">
+                <button class="gamebtn unselected" value="1"></button>
+                <button class="gamebtn unselected" value="2"></button>
+                <button class="gamebtn unselected" value="3"></button>
+                <button class="gamebtn unselected" value="4"></button>
+                <button class="gamebtn unselected" value="5"></button>
+                <button class="gamebtn unselected" value="6"></button>
+                <button class="gamebtn unselected" value="7"></button>
+                <button class="gamebtn unselected" value="8"></button>
+                <button class="gamebtn unselected" value="9"></button>
+            </div>
+
+            <div class="second-score score">
+                <img src="./img/redTeam.jpeg" alt="Red Avatar" class="avatar">
+                <div class="score-detail">
+                    <h1 id="user2" class="name">&ThickSpace;</h1>
+                    <div class="score-display">
+                        <h2>Score</h2>
+                        <h2 id="playerscore2">&ThickSpace;</h3>
+                    </div>
+                    <h2 id="playerturn2" class="turn"></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn">
+            <button class="btn-next form-btn">Re-start / Next</button>
+        </div>
+
+       
+
+    </main>
+</body>
+<script type="module" src="js/main.js"></script>
+
+</html>

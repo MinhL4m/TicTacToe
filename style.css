@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+/* -----------------Username input------------------------- */
+.hidden {
+    display: none !important;
+
+}
+
+.name-form,
+.final {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.356);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.form,
+.result {
+    height: 220px;
+    width: 400px;
+    background-color: #fff;
+    position: absolute;
+    border: 2px solid rgb(100, 99, 99);
+    text-align: center;
+    border-radius: 1.2rem;
+    box-shadow: .3rem .3rem .3rem rgb(63, 62, 62);
+}
+
+.form>* {
+    margin-bottom: 5vh;
+}
+
+.form-header {
+    letter-spacing: 3px;
+    background-image: linear-gradient(to right bottom, #494141, #f21115);
+    background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+}
+
+.username {
+    position: relative;
+}
+
+.fas,
+.username-label {
+    position: absolute;
+    pointer-events: none;
+}
+
+.username-input {
+    padding: 5px 25px;
+}
+
+.fas {
+    top: 8px;
+    left: 78px;
+    background-image: linear-gradient(to right bottom, #494141, #f21115);
+    background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+}
+
+.username-label {
+    top: 8px;
+    left: 102px;
+    opacity: 0;
+    transition: all .4s ease-out;
+}
+
+.username-input:focus+.username-label {
+    transform: translateY(-2rem);
+    opacity: 1;
+}
+
+.form-btn {
+    width: 9rem;
+    height: 3rem;
+    border: 1px solid rgb(129, 128, 128);
+    background-image: linear-gradient(to right bottom, #494141, #f21115);
+    background-size: 250%;
+    background-position-x: left;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    box-shadow: .3rem .3rem .3rem rgb(63, 62, 62);
+    transition: all .3s ease-out;
+    cursor: pointer;
+}
+
+.form-btn:hover {
+    background-position-x: right;
+}
+
+.form-btn:active {
+    box-shadow: .1rem .1rem .3rem rgb(63, 62, 62);
+}
+
+
+.first-form,
+.second-form,
+.result {
+    transform: translateY(-500%);
+}
+
+.appear {
+    animation: appear .9s forwards;
+    animation-timing-function: cubic-bezier(.81, -0.03, .59, 1.24);
+
+}
+
+.moveout {
+    animation: moveOut .9s forwards;
+    animation-timing-function: cubic-bezier(.15, -0.3, .72, .91);
+    cursor: none;
+}
+
+.moveup{
+    animation: moveUp .9s forwards;
+    animation-timing-function: cubic-bezier(.15, -0.3, .72, .91);
+    cursor: none;
+}
+
+
+@keyframes appear {
+    0% {
+        transform: translateY(-500%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes moveOut {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(500%);
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-500%);
+    }
+}
+
+/* ------------Avatar and Score---------------- */
+
+main {
+    background-image: linear-gradient(to right, #2f4858, #354f7a, #664b8f, #a33788, #d40d62, #e72323);
+    height: 100vh;
+}
+
+.game {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 300px calc(100vw - 700px) 300px;
+    grid-column-gap: 50px;
+    padding-top: 50px;
+}
+
+/* ----score----- */
+.score {
+    width: 300px;
+    height: 400px;
+    top: 50px;
+    background-color: rgb(189, 188, 188);
+    box-shadow: .3rem .3rem .3rem rgb(63, 62, 62);
+}
+
+.avatar {
+    width: 100%;
+    height: 200px;
+}
+
+.score-detail {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 35px;
+}
+
+.score-display {
+    width: 100%;
+    text-align: center;
+}
+
+.turn {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* ----board game------ */
+
+.board-game {
+    width: 100%;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    background: #000;
+    box-shadow: .3rem .3rem .3rem rgb(63, 62, 62);
+}
+
+/* --------game btn-------- */
+.gamebtn {
+    max-height: calc(500px/3 -10px);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    z-index: 5;
+    transition: all .9s ease-out;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.unselected::after {
+    content: '';
+    position: absolute;
+    /* since the clip path circle --> set % for color to show all */
+    background-image: linear-gradient(to right, #000 30%, #535151);
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    clip-path: circle();
+    transform: translate(-50%, -50%) scale(0);
+    transition: all .9s ease-out;
+}
+
+
+
+.unselected:hover::after {
+    transform: translate(-50%, -50%) scale(8);
+}
+
+.selected {
+    cursor: default;
+    z-index: 6;
+    color: #fff;
+}
+
+
+.btn {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
